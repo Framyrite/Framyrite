@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="208" viewBox="0 0 880 208" role="img" aria-labelledby="title desc">
+  <title id="title">От контракта до деплоя</title>
+  <desc id="desc">Четыре этапа работы над бэкендом: API, хранение данных, тестирование и деплой.</desc>
+  <rect x="1" y="1" width="878" height="206" rx="12" fill="#ffffff" stroke="#d8dee4" stroke-width="2"/>
+  <path d="M57 95h645" stroke="#b84316" stroke-width="2"/>
+  <path d="M133 95h7m-4-4 4 4-4 4m212-4h7m-4-4 4 4-4 4m212-4h7m-4-4 4 4-4 4" fill="none" stroke="#b84316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#ffffff" stroke="#b84316" stroke-width="3">
+    <circle cx="57" cy="95" r="6"/><circle cx="272" cy="95" r="6"/><circle cx="487" cy="95" r="6"/><circle cx="702" cy="95" r="6"/>
+  </g>
+  <g font-family="Arial,sans-serif" fill="#24292f">
+    <g font-size="26" font-weight="600">
+      <text x="47" y="63">Контракт</text>
+      <text x="262" y="63">Данные</text>
+      <text x="477" y="63">Проверки</text>
+      <text x="692" y="63">Деплой</text>
+    </g>
+    <g font-size="19" fill="#57606a">
+      <text x="47" y="143">FastAPI / OpenAPI</text>
+      <text x="262" y="143">PostgreSQL / SQL</text>
+      <text x="477" y="143">pytest / CI</text>
+      <text x="692" y="143">Docker / VPS</text>
+    </g>
+  </g>
+  <path d="M47 174h786" stroke="#d8dee4"/>
+</svg>

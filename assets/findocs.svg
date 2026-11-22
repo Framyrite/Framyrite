@@ -1,20 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="388" viewBox="0 0 880 388" role="img" aria-labelledby="title desc">
-  <title id="title">FinDocs · пример из демо</title>
-  <desc id="desc">В июле 2007 года Европейский инвестиционный банк выпустил климатические облигации на 600 миллионов евро. Показан фрагмент источника demo_reference.txt.</desc>
-  <rect width="880" height="388" rx="13" fill="#f7efe4"/>
-  <rect x="1" y="1" width="878" height="386" rx="12" fill="none" stroke="#dfcfc0" stroke-width="2"/>
-  <path d="M27 64h826" stroke="#d9c7b6"/>
-  <g font-family="Arial,sans-serif" fill="#2a221d">
-    <text x="31" y="44" font-size="25" font-weight="700">FinDocs</text>
-    <text x="849" y="43" font-size="20" text-anchor="end" fill="#6f5241">Пример из демо</text>
-    <text x="33" y="106" font-size="25" font-weight="600">Кто первым выпустил климатические</text>
-    <text x="33" y="138" font-size="25" font-weight="600">облигации и на какую сумму?</text>
-    <text x="33" y="193" font-size="25">Европейский инвестиционный банк · 600 млн евро [1]</text>
-    <rect x="27" y="221" width="825" height="140" rx="8" fill="#fffaf4" stroke="#e3d0bf"/>
-    <path d="M44 277v60" stroke="#c84b1d" stroke-width="4" stroke-linecap="round"/>
-    <text x="56" y="253" font-family="monospace" font-size="18" fill="#873b20">[1] demo_reference.txt</text>
-    <rect x="52" y="310" width="583" height="35" rx="3" fill="#ffd7ba"/>
-    <text x="56" y="295" font-size="23">…в июле 2007 года под названием</text>
-    <text x="56" y="335" font-size="23">«Климатические облигации» объёмом 600 миллионов евро.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="266" viewBox="0 0 880 266" role="img" aria-labelledby="title desc">
+  <title id="title">FinDocs · пример ответа</title>
+  <desc id="desc">На вопрос о первых климатических облигациях FinDocs отвечает со ссылкой на TXT-источник.</desc>
+  <rect x="1" y="1" width="878" height="264" rx="12" fill="#ffffff" stroke="#d8dee4" stroke-width="2"/>
+  <path d="M31 63h818" stroke="#d8dee4"/>
+  <g font-family="Arial,sans-serif" fill="#24292f">
+    <text x="33" y="43" font-size="21" font-weight="600">Пример из демо</text>
+    <text x="847" y="43" text-anchor="end" font-family="monospace" font-size="18" fill="#57606a">demo_reference.txt</text>
+    <text x="33" y="104" font-size="24" font-weight="600">Кто первым выпустил климатические облигации?</text>
+    <text x="33" y="147" font-size="23">Европейский инвестиционный банк <tspan fill="#b84316">[1]</tspan></text>
+    <rect x="31" y="174" width="818" height="63" rx="5" fill="#fff2e9"/>
+    <path d="M32 181v48" stroke="#b84316" stroke-width="3" stroke-linecap="round"/>
+    <text x="48" y="211" font-size="21" fill="#24292f">«…Европейским инвестиционным банком (ЕИБ) в июле 2007 года…»</text>
   </g>
 </svg>

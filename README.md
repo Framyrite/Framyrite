@@ -1,23 +1,39 @@
-<img src="./assets/cover.svg" alt="Framyrite · Python и FastAPI" width="880">
+# Framyrite
 
-Разрабатываю API на Python, работаю с SQL и разворачиваю приложения.
+**Python-разработчик. Пишу бэкенд и изучаю ИИ.**
 
-## FinDocs
+Мне нравится разбираться, как работают ИИ-инструменты, и пробовать их в разных задачах. С ChatGPT и Codex разбираю идеи, работаю с кодом, пишу тесты и ищу причины ошибок. С Ollama пробую подключать локальные модели к приложениям. Бэкенд — моя основная практика, а за его пределами люблю осваивать новое в IT.
 
-Задаёшь вопрос по загруженному TXT-документу. FinDocs находит подходящие фрагменты, формирует ответ через локальную модель и показывает цитаты, по которым его можно проверить. Если в документе не хватает сведений, приложение сообщает об этом.
+## Как я работаю
 
-<a href="https://github.com/Framyrite/FinDocs"><img src="./assets/findocs.svg" alt="Пример FinDocs: вопрос о климатических облигациях, ответ со ссылкой [1] и цитата из TXT-документа" width="880"></a>
+Описываю REST API на FastAPI и OpenAPI. В PostgreSQL проектирую таблицы и связи, пишу запросы с JOIN и агрегациями. Для локального хранения использую SQLite.
 
-[Репозиторий FinDocs](https://github.com/Framyrite/FinDocs) · [Демонстрационные вопросы](https://github.com/Framyrite/FinDocs/blob/main/qa/demo/demo_questions.md)
+Проверяю функции и API с pytest, использую линтеры и проверку типов, запускаю проверки в GitHub Actions. Собираю образы Docker и окружения в Compose, разворачиваю приложения на VPS или в облаке.
 
-## Стек
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/backend-map-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/backend-map.svg">
+  <img src="./assets/backend-map.svg" alt="Мой рабочий процесс: контракт API, данные, тесты и деплой" width="880">
+</picture>
 
-- **Бэкенд** · Python, REST API на FastAPI, OpenAPI.
-- **Данные** · Схемы и связи в PostgreSQL, запросы с JOIN и агрегациями, локальное хранение в SQLite.
-- **Запуск и деплой** · Dockerfile и образы, окружения в Docker Compose, деплой на VPS и облачных платформах.
-- **Качество кода** · Тесты на pytest, линтеры и проверка типов, автоматические проверки и сборки в GitHub Actions.
-- **Рабочие инструменты** · ChatGPT и Codex для планирования, кода, тестов и отладки. Ollama для подключения локальных моделей.
+## Проект · FinDocs
 
-## Активность FinDocs
+Веб-приложение для вопросов по TXT-документам. Находит подходящие фрагменты и показывает ответ с цитатами, которые можно сверить с источником.
 
-<a href="https://github.com/Framyrite/FinDocs/commits/main/"><img src="./assets/activity.svg" alt="Коммиты FinDocs за 12 календарных недель и дата последнего коммита" width="880"></a>
+**Мой вклад** — серверная библиотека документов. Реализовал HTTP API для загрузки, поиска и удаления TXT, локальное хранение и фоновую обработку. Добавил восстановление прерванной обработки при перезапуске. [Pull request](https://github.com/Framyrite/FinDocs/pull/7)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/findocs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/findocs.svg">
+  <img src="./assets/findocs.svg" alt="FinDocs: короткий ответ о климатических облигациях и цитата из документа" width="780">
+</picture>
+
+[Репозиторий](https://github.com/Framyrite/FinDocs) · [Демонстрационные вопросы](https://github.com/Framyrite/FinDocs/blob/main/qa/demo/demo_questions.md)
+
+### Активность FinDocs
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/activity.svg">
+  <img src="./assets/activity.svg" alt="Коммиты FinDocs за 12 календарных недель и дата последнего коммита" width="780">
+</picture>
