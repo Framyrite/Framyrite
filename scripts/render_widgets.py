@@ -149,8 +149,8 @@ def main():
     dark = light
     for light_color, dark_color in LIGHT_TO_DARK.items():
         dark = dark.replace(light_color, dark_color)
-    (ASSETS / "activity.svg").write_text(light, encoding="utf-8")
-    (ASSETS / "activity-dark.svg").write_text(dark, encoding="utf-8")
+    (ASSETS / "profile-activity.svg").write_text(light, encoding="utf-8")
+    (ASSETS / "profile-activity-dark.svg").write_text(dark, encoding="utf-8")
 
 
 if __name__ == "__main__":
