@@ -30,10 +30,12 @@
 
 [Репозиторий](https://github.com/Framyrite/FinDocs) · [Демонстрационные вопросы](https://github.com/Framyrite/FinDocs/blob/main/qa/demo/demo_questions.md)
 
-### Активность FinDocs
+## Активность на GitHub
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/activity-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/activity.svg">
-  <img src="./assets/activity.svg" alt="Коммиты FinDocs за 12 календарных недель и дата последнего коммита" width="780">
+  <img src="./assets/activity.svg" alt="Мои коммиты за 12 календарных недель и недавние репозитории" width="780">
 </picture>
+
+График показывает мои коммиты в основных ветках до пяти публичных репозиториев с моими самыми свежими коммитами. [Коммиты на GitHub](https://github.com/search?q=author%3AFramyrite&type=commits)

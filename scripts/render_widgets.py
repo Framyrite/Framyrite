@@ -1,14 +1,20 @@
-"""Render the FinDocs activity card from the public default branch."""
+"""Render a profile activity card from public GitHub commits."""
 
 import argparse
-from collections import Counter
-from datetime import datetime, timedelta
+from collections import Counter, defaultdict
+from datetime import datetime, time, timedelta
+from html import escape
+import json
 from pathlib import Path
-import subprocess
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 MOSCOW = ZoneInfo("Europe/Moscow")
 ASSETS = Path(__file__).resolve().parents[1] / "assets"
+PAGE_SIZE = 100
+REPOSITORY_LIMIT = 5
+EXCLUDED_REPOSITORIES = {"framyrite/projectdesk", "crucifiedshepherd/projectdesk"}
 LIGHT_TO_DARK = {
     "#ffffff": "#171a1f",
     "#d8dee4": "#343b45",
@@ -21,52 +27,110 @@ MUTED = "#57606a"
 ORANGE = "#b84316"
 
 
-def history(repo):
-    output = subprocess.check_output(
-        ["git", "-C", str(repo), "log", "--format=%H %cI", "HEAD"],
-        text=True,
+def github_commits(login, earliest, now):
+    query = f"author:{login} committer-date:{earliest.isoformat()}..{now.isoformat()}"
+    for page in range(1, 11):
+        params = urlencode({
+            "q": query,
+            "sort": "committer-date",
+            "order": "desc",
+            "page": page,
+            "per_page": PAGE_SIZE,
+        })
+        request = Request(
+            f"https://api.github.com/search/commits?{params}",
+            headers={
+                "Accept": "application/vnd.github+json",
+                "User-Agent": "Framyrite-Profile-Activity",
+            },
+        )
+        with urlopen(request, timeout=15) as response:
+            data = json.load(response)
+        if data["incomplete_results"] or data["total_count"] > 1000:
+            raise RuntimeError("The GitHub commit search did not return a complete result.")
+        yield from data["items"]
+        if page * PAGE_SIZE >= data["total_count"]:
+            return
+
+
+def moscow_time(value):
+    return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(MOSCOW)
+
+
+def repository_commits(login, start, now):
+    earliest = datetime.combine(start, time.min, MOSCOW)
+    excluded = EXCLUDED_REPOSITORIES | {f"{login}/{login}".casefold()}
+    repositories = defaultdict(list)
+    seen = set()
+    for item in github_commits(login, earliest, now):
+        name = item["repository"]["full_name"]
+        if name.casefold() in excluded or item["repository"]["private"] or item["sha"] in seen:
+            continue
+        timestamp = moscow_time(item["commit"]["committer"]["date"])
+        if earliest <= timestamp <= now:
+            repositories[name].append(timestamp)
+            seen.add(item["sha"])
+
+    recent = sorted(
+        repositories.items(),
+        key=lambda repo: (max(repo[1]), repo[0]),
+        reverse=True,
     )
-    return [
-        (sha, datetime.fromisoformat(timestamp).astimezone(MOSCOW))
-        for sha, timestamp in (line.split() for line in output.splitlines())
-    ]
+    return recent[:REPOSITORY_LIMIT]
 
 
-def activity(commits, today):
-    start = today - timedelta(days=today.weekday() + 77)
-    weeks = [start + timedelta(weeks=index) for index in range(12)]
+def activity(repositories, start):
     counts = Counter(
         (timestamp.date() - start).days // 7
-        for _, timestamp in commits
-        if start <= timestamp.date() <= today
+        for _, timestamps in repositories
+        for timestamp in timestamps
     )
-    latest_sha, latest_at = max(commits, key=lambda commit: commit[1])
     peak = max(counts.values(), default=1)
+    last = (
+        f"Последний коммит · {max(repositories[0][1]):%d.%m.%Y}"
+        if repositories
+        else "За этот период нет коммитов"
+    )
     elements = [
-        f'<text x="29" y="38" font-size="21" font-weight="600" fill="{INK}">Коммиты за 12 недель</text>',
-        f'<text x="851" y="38" text-anchor="end" font-size="17" fill="{MUTED}">Последний · {latest_at:%d.%m.%Y} · {latest_sha[:7]}</text>',
-        '<path d="M28 66h824M28 107h824M28 148h824" stroke="#d8dee4"/>',
+        f'<text x="27" y="38" font-size="22" font-weight="600" fill="{INK}">Мои коммиты за 12 недель</text>',
+        f'<text x="27" y="63" font-size="16" fill="{MUTED}">{last}</text>',
+        '<path d="M26 100h487M26 148h487M26 196h487M534 25v205" stroke="#d8dee4"/>',
+        f'<text x="555" y="38" font-size="17" font-weight="600" fill="{INK}">Недавние репозитории</text>',
     ]
-    for index, week in enumerate(weeks):
-        x = 45 + index * 69
+    for index in range(12):
+        x = 36 + index * 40
         count = counts[index]
         if count:
-            height = max(1, 81 * count / peak)
-            top = 147 - height
+            height = max(1, 94 * count / peak)
+            top = 195 - height
             elements.append(
-                f'<rect x="{x}" y="{top:.2f}" width="32" height="{height:.2f}" rx="1" fill="{ORANGE}"/>'
+                f'<rect x="{x}" y="{top:.2f}" width="22" height="{height:.2f}" rx="1" fill="{ORANGE}"/>'
             )
             elements.append(
-                f'<text x="{x + 16}" y="{top - 5:.2f}" text-anchor="middle" font-size="13" fill="{MUTED}">{count}</text>'
+                f'<text x="{x + 11}" y="{top - 5:.2f}" text-anchor="middle" font-size="12" fill="{MUTED}">{count}</text>'
             )
         if index in (0, 3, 7, 11):
+            week = start + timedelta(weeks=index)
             elements.append(
-                f'<text x="{x + 16}" y="173" text-anchor="middle" font-size="15" fill="{MUTED}">{week:%d.%m}</text>'
+                f'<text x="{x + 11}" y="222" text-anchor="middle" font-size="14" fill="{MUTED}">{week:%d.%m}</text>'
             )
+
+    for index, (name, timestamps) in enumerate(repositories):
+        y = 74 + index * 34
+        name = name.split("/", 1)[-1]
+        label = escape(name if len(name) <= 29 else name[:28] + "…")
+        elements.append(
+            f'<text x="555" y="{y}" font-family="monospace" font-size="14" fill="{INK}">{label}</text>'
+        )
+        elements.append(
+            f'<text x="852" y="{y}" text-anchor="end" font-size="15" fill="{MUTED}">{len(timestamps)}</text>'
+        )
     body = "\n    ".join(elements)
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="880" height="194" viewBox="0 0 880 194" role="img" aria-labelledby="title">
-  <title id="title">Активность FinDocs · последний коммит {latest_at:%d.%m.%Y}</title>
-  <rect x="1" y="1" width="878" height="192" rx="12" fill="#ffffff" stroke="#d8dee4" stroke-width="2"/>
+    total = sum(counts.values())
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="880" height="250" viewBox="0 0 880 250" role="img" aria-labelledby="title desc">
+  <title id="title">Мои коммиты за 12 недель</title>
+  <desc id="desc">Число коммитов: {total}. Репозиториев: {len(repositories)}. {last}.</desc>
+  <rect x="1" y="1" width="878" height="248" rx="12" fill="#ffffff" stroke="#d8dee4" stroke-width="2"/>
   <g font-family="Arial,sans-serif">
     {body}
   </g>
@@ -76,10 +140,12 @@ def activity(commits, today):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("findocs", type=Path)
+    parser.add_argument("login")
     args = parser.parse_args()
-    today = datetime.now(MOSCOW).date()
-    light = activity(history(args.findocs), today)
+    now = datetime.now(MOSCOW)
+    today = now.date()
+    start = today - timedelta(days=today.weekday() + 77)
+    light = activity(repository_commits(args.login, start, now), start)
     dark = light
     for light_color, dark_color in LIGHT_TO_DARK.items():
         dark = dark.replace(light_color, dark_color)

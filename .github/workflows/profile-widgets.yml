@@ -1,4 +1,4 @@
-name: Обновление активности FinDocs
+name: Обновление активности профиля
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - '.github/workflows/profile-widgets.yml'
       - 'scripts/render_widgets.py'
   schedule:
-    - cron: '23 4 * * *'
+    - cron: '23 */3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -22,10 +22,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - name: Построить график по публичным коммитам FinDocs
-        run: |
-          git clone --quiet --bare https://github.com/Framyrite/FinDocs.git "$RUNNER_TEMP/findocs.git"
-          python3 scripts/render_widgets.py "$RUNNER_TEMP/findocs.git"
+      - name: Построить график по публичным коммитам
+        env:
+          PROFILE_LOGIN: ${{ github.repository_owner }}
+        run: python3 scripts/render_widgets.py "$PROFILE_LOGIN"
       - name: Опубликовать изменения
         run: |
           git add assets/activity.svg assets/activity-dark.svg
@@ -34,5 +34,5 @@ jobs:
           fi
           git -c user.name='github-actions[bot]' \
               -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
-              commit -m 'Update FinDocs activity'
+              commit -m 'Update public profile activity'
           git push

@@ -1,27 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="194" viewBox="0 0 880 194" role="img" aria-labelledby="title">
-  <title id="title">Активность FinDocs · последний коммит 20.11.2026</title>
-  <rect x="1" y="1" width="878" height="192" rx="12" fill="#171a1f" stroke="#343b45" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="250" viewBox="0 0 880 250" role="img" aria-labelledby="title desc">
+  <title id="title">Мои коммиты за 12 недель</title>
+  <desc id="desc">Число коммитов: 98. Репозиториев: 2. Последний коммит · 20.11.2026.</desc>
+  <rect x="1" y="1" width="878" height="248" rx="12" fill="#171a1f" stroke="#343b45" stroke-width="2"/>
   <g font-family="Arial,sans-serif">
-    <text x="29" y="38" font-size="21" font-weight="600" fill="#f0f3f6">Коммиты за 12 недель</text>
-    <text x="851" y="38" text-anchor="end" font-size="17" fill="#b0b7c3">Последний · 20.11.2026 · b1eadf6</text>
-    <path d="M28 66h824M28 107h824M28 148h824" stroke="#343b45"/>
-    <text x="61" y="173" text-anchor="middle" font-size="15" fill="#b0b7c3">31.08</text>
-    <rect x="183" y="134.94" width="32" height="12.06" rx="1" fill="#ff8a4c"/>
-    <text x="199" y="129.94" text-anchor="middle" font-size="13" fill="#b0b7c3">14</text>
-    <text x="268" y="173" text-anchor="middle" font-size="15" fill="#b0b7c3">21.09</text>
-    <rect x="321" y="146.00" width="32" height="1.00" rx="1" fill="#ff8a4c"/>
-    <text x="337" y="141.00" text-anchor="middle" font-size="13" fill="#b0b7c3">1</text>
-    <rect x="390" y="146.00" width="32" height="1.00" rx="1" fill="#ff8a4c"/>
-    <text x="406" y="141.00" text-anchor="middle" font-size="13" fill="#b0b7c3">1</text>
-    <rect x="459" y="145.28" width="32" height="1.72" rx="1" fill="#ff8a4c"/>
-    <text x="475" y="140.28" text-anchor="middle" font-size="13" fill="#b0b7c3">2</text>
-    <text x="544" y="173" text-anchor="middle" font-size="15" fill="#b0b7c3">19.10</text>
-    <rect x="666" y="66.00" width="32" height="81.00" rx="1" fill="#ff8a4c"/>
-    <text x="682" y="61.00" text-anchor="middle" font-size="13" fill="#b0b7c3">94</text>
-    <rect x="735" y="115.12" width="32" height="31.88" rx="1" fill="#ff8a4c"/>
-    <text x="751" y="110.12" text-anchor="middle" font-size="13" fill="#b0b7c3">37</text>
-    <rect x="804" y="109.09" width="32" height="37.91" rx="1" fill="#ff8a4c"/>
-    <text x="820" y="104.09" text-anchor="middle" font-size="13" fill="#b0b7c3">44</text>
-    <text x="820" y="173" text-anchor="middle" font-size="15" fill="#b0b7c3">16.11</text>
+    <text x="27" y="38" font-size="22" font-weight="600" fill="#f0f3f6">Мои коммиты за 12 недель</text>
+    <text x="27" y="63" font-size="16" fill="#b0b7c3">Последний коммит · 20.11.2026</text>
+    <path d="M26 100h487M26 148h487M26 196h487M534 25v205" stroke="#343b45"/>
+    <text x="555" y="38" font-size="17" font-weight="600" fill="#f0f3f6">Недавние репозитории</text>
+    <text x="47" y="222" text-anchor="middle" font-size="14" fill="#b0b7c3">31.08</text>
+    <rect x="116" y="179.33" width="22" height="15.67" rx="1" fill="#ff8a4c"/>
+    <text x="127" y="174.33" text-anchor="middle" font-size="12" fill="#b0b7c3">6</text>
+    <text x="167" y="222" text-anchor="middle" font-size="14" fill="#b0b7c3">21.09</text>
+    <rect x="276" y="189.78" width="22" height="5.22" rx="1" fill="#ff8a4c"/>
+    <text x="287" y="184.78" text-anchor="middle" font-size="12" fill="#b0b7c3">2</text>
+    <text x="327" y="222" text-anchor="middle" font-size="14" fill="#b0b7c3">19.10</text>
+    <rect x="396" y="101.00" width="22" height="94.00" rx="1" fill="#ff8a4c"/>
+    <text x="407" y="96.00" text-anchor="middle" font-size="12" fill="#b0b7c3">36</text>
+    <rect x="436" y="132.33" width="22" height="62.67" rx="1" fill="#ff8a4c"/>
+    <text x="447" y="127.33" text-anchor="middle" font-size="12" fill="#b0b7c3">24</text>
+    <rect x="476" y="116.67" width="22" height="78.33" rx="1" fill="#ff8a4c"/>
+    <text x="487" y="111.67" text-anchor="middle" font-size="12" fill="#b0b7c3">30</text>
+    <text x="487" y="222" text-anchor="middle" font-size="14" fill="#b0b7c3">16.11</text>
+    <text x="555" y="74" font-family="monospace" font-size="14" fill="#f0f3f6">FinDocs</text>
+    <text x="852" y="74" text-anchor="end" font-size="15" fill="#b0b7c3">85</text>
+    <text x="555" y="108" font-family="monospace" font-size="14" fill="#f0f3f6">PPP_lab3_PingPong_Pinball</text>
+    <text x="852" y="108" text-anchor="end" font-size="15" fill="#b0b7c3">13</text>
   </g>
 </svg>
