@@ -92,17 +92,17 @@ def activity(repositories, start):
         else "За этот период нет коммитов"
     )
     elements = [
-        f'<text x="27" y="38" font-size="22" font-weight="600" fill="{INK}">Мои коммиты за 12 недель</text>',
-        f'<text x="27" y="63" font-size="16" fill="{MUTED}">{last}</text>',
-        '<path d="M26 100h487M26 148h487M26 196h487M534 25v205" stroke="#d8dee4"/>',
-        f'<text x="555" y="38" font-size="17" font-weight="600" fill="{INK}">Недавние репозитории</text>',
+        f'<text x="24" y="32" font-size="21" font-weight="600" fill="{INK}">Недавние репозитории</text>',
+        f'<text x="372" y="32" font-size="17" font-weight="600" fill="{INK}">Мои коммиты за 12 недель</text>',
+        f'<text x="372" y="55" font-size="14" fill="{MUTED}">{last}</text>',
+        '<path d="M352 22v145M372 108h483M372 147h483" stroke="#d8dee4"/>',
     ]
     for index in range(12):
-        x = 36 + index * 40
+        x = 380 + index * 39
         count = counts[index]
         if count:
-            height = max(1, 94 * count / peak)
-            top = 195 - height
+            height = max(1, 65 * count / peak)
+            top = 146 - height
             elements.append(
                 f'<rect x="{x}" y="{top:.2f}" width="22" height="{height:.2f}" rx="1" fill="{ORANGE}"/>'
             )
@@ -112,25 +112,25 @@ def activity(repositories, start):
         if index in (0, 3, 7, 11):
             week = start + timedelta(weeks=index)
             elements.append(
-                f'<text x="{x + 11}" y="222" text-anchor="middle" font-size="14" fill="{MUTED}">{week:%d.%m}</text>'
+                f'<text x="{x + 11}" y="169" text-anchor="middle" font-size="13" fill="{MUTED}">{week:%d.%m}</text>'
             )
 
     for index, (name, timestamps) in enumerate(repositories):
-        y = 74 + index * 34
+        y = 66 + index * 23
         name = name.split("/", 1)[-1]
         label = escape(name if len(name) <= 29 else name[:28] + "…")
         elements.append(
-            f'<text x="555" y="{y}" font-family="monospace" font-size="14" fill="{INK}">{label}</text>'
+            f'<text x="24" y="{y}" font-family="monospace" font-size="15" fill="{INK}">{label}</text>'
         )
         elements.append(
-            f'<text x="852" y="{y}" text-anchor="end" font-size="15" fill="{MUTED}">{len(timestamps)}</text>'
+            f'<text x="326" y="{y}" text-anchor="end" font-size="18" font-weight="600" fill="{ORANGE}">{len(timestamps)}</text>'
         )
     body = "\n    ".join(elements)
     total = sum(counts.values())
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="880" height="250" viewBox="0 0 880 250" role="img" aria-labelledby="title desc">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="880" height="188" viewBox="0 0 880 188" role="img" aria-labelledby="title desc">
   <title id="title">Мои коммиты за 12 недель</title>
   <desc id="desc">Число коммитов: {total}. Репозиториев: {len(repositories)}. {last}.</desc>
-  <rect x="1" y="1" width="878" height="248" rx="12" fill="#ffffff" stroke="#d8dee4" stroke-width="2"/>
+  <rect x="1" y="1" width="878" height="186" rx="12" fill="#ffffff" stroke="#d8dee4" stroke-width="2"/>
   <g font-family="Arial,sans-serif">
     {body}
   </g>
