@@ -1,0 +1,39 @@
+name: Обновление виджетов профиля
+
+on:
+  push:
+    paths:
+      - '.github/workflows/profile-widgets.yml'
+      - 'scripts/render_widgets.py'
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-widgets
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Построить виджеты по публичным коммитам
+        run: |
+          git clone --quiet --bare https://github.com/Framyrite/FinDocs.git "$RUNNER_TEMP/findocs.git"
+          git clone --quiet --bare https://github.com/Framyrite/ProjectDesk.git "$RUNNER_TEMP/projectdesk.git"
+          python3 scripts/render_widgets.py "$RUNNER_TEMP/findocs.git" "$RUNNER_TEMP/projectdesk.git"
+      - name: Опубликовать изменения
+        run: |
+          git add assets/activity.svg assets/latest.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' \
+              -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+              commit -m 'Update profile widgets'
+          git push
