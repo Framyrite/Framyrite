@@ -1,33 +1,23 @@
-<img src="./assets/cover.svg" alt="Framyrite · Python / FastAPI · API и приложения" width="880">
+<img src="./assets/cover.svg" alt="Framyrite · Python и FastAPI" width="880">
 
-Разрабатываю REST API на Python, работаю с SQL и собираю приложения для локального запуска и деплоя.
+Разрабатываю API на Python, работаю с SQL и разворачиваю приложения.
 
-## Избранные проекты
+## FinDocs
 
-### [FinDocs](https://github.com/Framyrite/FinDocs)
+Задаёшь вопрос по загруженному TXT-документу. FinDocs находит подходящие фрагменты, формирует ответ через локальную модель и показывает цитаты, по которым его можно проверить. Если в документе не хватает сведений, приложение сообщает об этом.
 
-Веб-приложение для вопросов по TXT-документам. FastAPI ищет подходящие фрагменты, а локальная модель через Ollama формирует ответ с цитатами из документов.
+<a href="https://github.com/Framyrite/FinDocs"><img src="./assets/findocs.svg" alt="Пример FinDocs: вопрос о климатических облигациях, ответ со ссылкой [1] и цитата из TXT-документа" width="880"></a>
 
-<a href="https://github.com/Framyrite/FinDocs"><img src="./assets/findocs.svg" alt="FinDocs: от TXT через поиск по фрагментам к ответу с цитатой" width="620"></a>
-
-### [ProjectDesk](https://github.com/Framyrite/ProjectDesk)
-
-Настольный органайзер для задач, дедлайнов и заметок. Хранит данные локально в SQLite и работает без аккаунта.
-
-<a href="https://github.com/Framyrite/ProjectDesk"><img src="./assets/projectdesk.svg" alt="ProjectDesk: задачи, календарь и заметки" width="620"></a>
+[Репозиторий FinDocs](https://github.com/Framyrite/FinDocs) · [Демонстрационные вопросы](https://github.com/Framyrite/FinDocs/blob/main/qa/demo/demo_questions.md)
 
 ## Стек
 
-| Направление | Как использую |
-| --- | --- |
-| **Бэкенд** | **Python** для приложений, библиотек и скриптов. **FastAPI** для REST API с OpenAPI |
-| **Данные** | **PostgreSQL** для схем и связей, **SQL** для запросов с JOIN и агрегациями, **SQLite** для локального хранения |
-| **Окружение и деплой** | **Docker** для сборки образов, **Docker Compose** для совместного запуска сервисов. Разворачиваю приложения на VPS и облачных платформах |
-| **Качество кода** | **pytest** для тестов функций и API, линтеры и проверка типов, **GitHub Actions** для автоматических проверок и сборок |
-| **Инструменты** | **ChatGPT и Codex** для планирования изменений, работы с кодом, тестами и отладкой. **Ollama** для подключения локальных моделей к приложениям |
+- **Бэкенд** · Python, REST API на FastAPI, OpenAPI.
+- **Данные** · Схемы и связи в PostgreSQL, запросы с JOIN и агрегациями, локальное хранение в SQLite.
+- **Запуск и деплой** · Dockerfile и образы, окружения в Docker Compose, деплой на VPS и облачных платформах.
+- **Качество кода** · Тесты на pytest, линтеры и проверка типов, автоматические проверки и сборки в GitHub Actions.
+- **Рабочие инструменты** · ChatGPT и Codex для планирования, кода, тестов и отладки. Ollama для подключения локальных моделей.
 
-## Активность проектов
+## Активность FinDocs
 
-<img src="./assets/activity.svg" alt="Коммиты в основных ветках FinDocs и ProjectDesk за 12 календарных недель" width="620">
-
-<img src="./assets/latest.svg" alt="Последний коммит среди избранных проектов" width="620">
+<a href="https://github.com/Framyrite/FinDocs/commits/main/"><img src="./assets/activity.svg" alt="Коммиты FinDocs за 12 календарных недель и дата последнего коммита" width="880"></a>

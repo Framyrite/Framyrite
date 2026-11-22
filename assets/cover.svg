@@ -1,24 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="880" height="256" viewBox="0 0 880 256" role="img" aria-labelledby="title desc">
-  <title id="title">Framyrite</title>
-  <desc id="desc">Обложка в белом и оранжевом. Справа документ связан с ответом через выделенную цитату.</desc>
-  <rect x="1" y="1" width="878" height="254" rx="15" fill="#fffdf9" stroke="#ded5ca" stroke-width="2"/>
-  <path d="M32 36h816M32 220h816" stroke="#e7ddd2"/>
-  <path d="M37 69v114" stroke="#dc5e25" stroke-width="6" stroke-linecap="round"/>
-  <text x="61" y="120" font-family="Arial,sans-serif" font-size="58" font-weight="700" fill="#2c2520" letter-spacing="-2">Framyrite</text>
-  <text x="64" y="154" font-family="monospace" font-size="19" fill="#9f431b">Python / FastAPI</text>
-  <text x="64" y="181" font-family="Arial,sans-serif" font-size="17" fill="#655950">API и приложения</text>
-  <path d="M475 59h338M475 81h338M475 103h338M475 125h338M475 147h338M475 169h338M475 191h338M489 50v147m22 0V50m22 0v147m22 0V50m22 0v147m22 0V50m22 0v147m22 0V50m22 0v147m22 0V50m22 0v147m22 0V50m22 0v147m22 0V50m22 0v147" stroke="#f0e7de" fill="none"/>
-  <path d="M505 56h108l21 21v114H505z" fill="#fff" stroke="#d8c8b9" stroke-width="2" stroke-linejoin="round"/>
-  <path d="M613 56v22h21" stroke="#d8c8b9" stroke-width="2" fill="none"/>
-  <text x="523" y="90" font-family="monospace" font-size="15" fill="#655950">.txt</text>
-  <path d="M523 104h70m-70 12h92m-92 38h67m-67 12h81" stroke="#d8c8b9" stroke-width="4" stroke-linecap="round"/>
-  <rect x="519" y="125" width="105" height="19" rx="3" fill="#ffddc3"/>
-  <path d="M526 134h75" stroke="#d95d23" stroke-width="3" stroke-linecap="round"/>
-  <path d="M624 134h29v26h32" fill="none" stroke="#d95d23" stroke-width="2"/>
-  <circle cx="624" cy="134" r="3" fill="#d95d23"/>
-  <rect x="685" y="101" width="150" height="86" rx="8" fill="#fff" stroke="#d8c8b9" stroke-width="2"/>
-  <text x="700" y="125" font-family="Arial,sans-serif" font-size="15" fill="#2c2520">Ответ</text>
-  <path d="M700 136h105" stroke="#d8c8b9" stroke-width="3" stroke-linecap="round"/>
-  <rect x="700" y="147" width="118" height="26" rx="4" fill="#fff0e4"/>
-  <text x="711" y="165" font-family="Arial,sans-serif" font-size="14" fill="#9f431b">↳ Цитата</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="192" viewBox="0 0 880 192" role="img" aria-labelledby="title">
+  <title id="title">Framyrite · Python и FastAPI</title>
+  <rect width="880" height="192" rx="13" fill="#fffaf4"/>
+  <rect x="1" y="1" width="878" height="190" rx="12" fill="none" stroke="#e2d7ca" stroke-width="2"/>
+  <path d="M37 147H842" stroke="#d8cabe" stroke-width="1.5"/>
+  <text x="34" y="110" font-family="Arial,sans-serif" font-size="72" font-weight="700" letter-spacing="-3" fill="#29231f">Framyrite</text>
+  <text x="38" y="175" font-family="Arial,sans-serif" font-size="21" fill="#50453d">Python · FastAPI</text>
+  <path d="M711 50h-18v62h18m99-62h18v62h-18" fill="none" stroke="#c84b1d" stroke-width="4"/>
+  <path d="M750 74c-7 0-13 6-13 13v8h14V83h-6c1-3 3-5 5-6zm24 0c-7 0-13 6-13 13v8h14V83h-6c1-3 3-5 5-6z" fill="#c84b1d"/>
 </svg>

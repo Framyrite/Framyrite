@@ -1,15 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="620" height="106" viewBox="0 0 620 106" role="img" aria-labelledby="title">
-  <title id="title">FinDocs: TXT → поиск по фрагментам → ответ и цитата</title>
-  <rect x="1" y="1" width="618" height="104" rx="11" fill="#fffdf9" stroke="#decec0" stroke-width="2"/>
-  <g fill="none" stroke="#df6429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M27 37h23l9 9v27H27zM50 37v10h8m-22 9h13m-13 8h13"/>
-    <path d="M143 55h23m-5-5 5 5-5 5m189-5h23m-5-5 5 5-5 5"/>
-    <circle cx="212" cy="52" r="9"/><path d="m219 59 8 8"/>
-    <rect x="410" y="40" width="28" height="25" rx="4"/><path d="M419 65v7l7-7m-7-13h10"/>
-  </g>
-  <g font-family="Arial,sans-serif" font-size="17" fill="#2c2520">
-    <text x="72" y="61">TXT</text>
-    <text x="237" y="61">Поиск</text>
-    <text x="451" y="61">Ответ и цитата</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="388" viewBox="0 0 880 388" role="img" aria-labelledby="title desc">
+  <title id="title">FinDocs · пример из демо</title>
+  <desc id="desc">В июле 2007 года Европейский инвестиционный банк выпустил климатические облигации на 600 миллионов евро. Показан фрагмент источника demo_reference.txt.</desc>
+  <rect width="880" height="388" rx="13" fill="#f7efe4"/>
+  <rect x="1" y="1" width="878" height="386" rx="12" fill="none" stroke="#dfcfc0" stroke-width="2"/>
+  <path d="M27 64h826" stroke="#d9c7b6"/>
+  <g font-family="Arial,sans-serif" fill="#2a221d">
+    <text x="31" y="44" font-size="25" font-weight="700">FinDocs</text>
+    <text x="849" y="43" font-size="20" text-anchor="end" fill="#6f5241">Пример из демо</text>
+    <text x="33" y="106" font-size="25" font-weight="600">Кто первым выпустил климатические</text>
+    <text x="33" y="138" font-size="25" font-weight="600">облигации и на какую сумму?</text>
+    <text x="33" y="193" font-size="25">Европейский инвестиционный банк · 600 млн евро [1]</text>
+    <rect x="27" y="221" width="825" height="140" rx="8" fill="#fffaf4" stroke="#e3d0bf"/>
+    <path d="M44 277v60" stroke="#c84b1d" stroke-width="4" stroke-linecap="round"/>
+    <text x="56" y="253" font-family="monospace" font-size="18" fill="#873b20">[1] demo_reference.txt</text>
+    <rect x="52" y="310" width="583" height="35" rx="3" fill="#ffd7ba"/>
+    <text x="56" y="295" font-size="23">…в июле 2007 года под названием</text>
+    <text x="56" y="335" font-size="23">«Климатические облигации» объёмом 600 миллионов евро.</text>
   </g>
 </svg>
