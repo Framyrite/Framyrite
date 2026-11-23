@@ -7,20 +7,20 @@
     <text x="372" y="32" font-size="17" font-weight="600" fill="#f0f3f6">Мои коммиты за 12 недель</text>
     <text x="372" y="55" font-size="14" fill="#b0b7c3">Последний коммит · 20.11.2026</text>
     <path d="M352 22v145M372 108h483M372 147h483" stroke="#343b45"/>
-    <text x="391" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">31.08</text>
-    <rect x="458" y="135.17" width="22" height="10.83" rx="1" fill="#ff8a4c"/>
-    <text x="469" y="130.17" text-anchor="middle" font-size="12" fill="#b0b7c3">6</text>
-    <text x="508" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">21.09</text>
-    <rect x="614" y="142.39" width="22" height="3.61" rx="1" fill="#ff8a4c"/>
-    <text x="625" y="137.39" text-anchor="middle" font-size="12" fill="#b0b7c3">2</text>
-    <text x="664" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">19.10</text>
-    <rect x="731" y="81.00" width="22" height="65.00" rx="1" fill="#ff8a4c"/>
-    <text x="742" y="76.00" text-anchor="middle" font-size="12" fill="#b0b7c3">36</text>
-    <rect x="770" y="102.67" width="22" height="43.33" rx="1" fill="#ff8a4c"/>
-    <text x="781" y="97.67" text-anchor="middle" font-size="12" fill="#b0b7c3">24</text>
-    <rect x="809" y="91.83" width="22" height="54.17" rx="1" fill="#ff8a4c"/>
-    <text x="820" y="86.83" text-anchor="middle" font-size="12" fill="#b0b7c3">30</text>
-    <text x="820" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">16.11</text>
+    <text x="391" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">07.09</text>
+    <rect x="419" y="135.17" width="22" height="10.83" rx="1" fill="#ff8a4c"/>
+    <text x="430" y="130.17" text-anchor="middle" font-size="12" fill="#b0b7c3">6</text>
+    <text x="508" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">28.09</text>
+    <rect x="575" y="142.39" width="22" height="3.61" rx="1" fill="#ff8a4c"/>
+    <text x="586" y="137.39" text-anchor="middle" font-size="12" fill="#b0b7c3">2</text>
+    <text x="664" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">26.10</text>
+    <rect x="692" y="81.00" width="22" height="65.00" rx="1" fill="#ff8a4c"/>
+    <text x="703" y="76.00" text-anchor="middle" font-size="12" fill="#b0b7c3">36</text>
+    <rect x="731" y="102.67" width="22" height="43.33" rx="1" fill="#ff8a4c"/>
+    <text x="742" y="97.67" text-anchor="middle" font-size="12" fill="#b0b7c3">24</text>
+    <rect x="770" y="91.83" width="22" height="54.17" rx="1" fill="#ff8a4c"/>
+    <text x="781" y="86.83" text-anchor="middle" font-size="12" fill="#b0b7c3">30</text>
+    <text x="820" y="169" text-anchor="middle" font-size="13" fill="#b0b7c3">23.11</text>
     <text x="24" y="66" font-family="monospace" font-size="15" fill="#f0f3f6">FinDocs</text>
     <text x="326" y="66" text-anchor="end" font-size="18" font-weight="600" fill="#ff8a4c">85</text>
     <text x="24" y="89" font-family="monospace" font-size="15" fill="#f0f3f6">PPP_lab3_PingPong_Pinball</text>
